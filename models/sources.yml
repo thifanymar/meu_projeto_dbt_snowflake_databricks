@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: base_limpa
+    database: DW_SAUDE
+    schema: GOLD
+    tables:
+      - name: CLEAN_DADOS
