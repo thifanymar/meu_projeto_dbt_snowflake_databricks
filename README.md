@@ -29,6 +29,9 @@ bash
 ├── models/
 │   ├── databricks/                   # Modelos dbt da camada clean
 │   └── snowflake/                    # Modelos dbt da camada gold (dimensional)
+├── dados_simulacao/
+│   └── dados_datasus.csv             # Arquivo usado como fonte de dados para o projeto
+│   └── simulando-dados.txt           # Arquivo usado para simular a etapa clean no Snowflake
 ├── profiles.yml                      # Arquivo de configuração dbt (não incluído por segurança)
 └── README.md                         # Este documento
 
@@ -58,7 +61,11 @@ pip install dbt-core dbt-snowflake dbt-databricks
 ```
 **4. profiles.yml** configurado para Databricks e Snowflake. Foi incluido nesse repositório um documento de exemplo de como o arquivo deve estar configurado.
 
-**5. Upload** do arquivo dados_datasus.csv no schema fontes do Databricks.
+**5. Upload** do arquivo dados_datasus.csv no schema fontes do Databricks. O arquivo está localizado na pasta dados_simulacao.
+
+**6. Simular** dados clean no Snowflake. Fois colocado um arquivo para essa simulação na pasta dados_simulacao nomeado como simulando-dados.txt
+
+OBS: a etapa 6 é necessária pois os dados não são salvos em um provedor de nuvem que permita que o Snowflake tenha acesso a esses dados.
 
 ## 🚀 Como Executar
 Para executar temos duas opções. Executar cada um dos notebooks ou criar um job para orquestrar a execução.
