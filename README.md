@@ -1,15 +1,96 @@
-Welcome to your new dbt project!
+# Health Insights Brasil - Pipeline de Dados com Databricks, Snowflake e dbt
+## 📌 Contexto
+Este projeto foi desenvolvido como parte do Desafio Final de Engenharia de Dados da triggo.ai, com o objetivo de projetar e implementar uma solução de engenharia de dados para a Health Insights Brasil, uma startup fictícia dedicada a tornar os dados de saúde pública do DataSUS mais acessíveis e prontos para análise.
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+A solução proposta simula um pipeline de dados completo, desde a ingestão dos dados brutos até a modelagem dimensional no formato Star Schema, utilizando **Databricks, Snowflake e dbt**.
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## 🛠 Tecnologias Utilizadas
+**Databricks** – Ingestão e processamento inicial dos dados (camadas raw e clean).
+
+**Snowflake** – Armazenamento e modelagem dimensional (camada gold).
+
+**dbt** – Transformações, documentação, testes e organização da modelagem.
+
+**Python / PySpark** – Scripts de ingestão e pré-processamento.
+
+**Delta Lake**– Otimização de armazenamento e versionamento no Databricks.
+
+## 📂 Estrutura do Projeto
+
+```bash
+bash
+
+'''
+.
+├── extracao-dados.ipynb              # Notebook que simula extração dos dados DataSUS (camada raw)
+├── execucao-projeto-snowflake.ipynb  # Notebook que executa o dbt apontando para o Snowflake
+├── dados_datasus.csv                 # Arquivo de dados exemplo (simulação API DataSUS)
+├── models/
+│   ├── databricks/                   # Modelos dbt da camada clean
+│   └── snowflake/                    # Modelos dbt da camada gold (dimensional)
+├── profiles.yml                      # Arquivo de configuração dbt (não incluído por segurança)
+└── README.md                         # Este documento
+
+```
+
+## 📋 Pré-requisitos
+Antes de executar o projeto, você precisa ter:
+
+**1. Conta no Databricks** (workspace ativo).
+
+**2. Conta no Snowflake** com:
+    - Warehouse criado (COMPUTE_WH2)
+
+    - Database criado (DW_SAUDE)
+
+    - Schemas:
+
+        - fontes (para dados brutos)
+
+        - gold (para modelo dimensional)
+
+**3. dbt-core** e adaptadores instalados:
+```bash
+python
+pip install dbt-core dbt-snowflake dbt-databricks
+
+```
+**4. profiles.yml** configurado para Databricks e Snowflake. Foi incluido nesse repositório um documento de exemplo de como o arquivo deve estar configurado.
+
+**5. Upload** do arquivo dados_datasus.csv no schema fontes do Databricks.
+
+## 🚀 Como Executar
+Para executar temos duas opções. Executar cada um dos notebooks ou criar um job para orquestrar a execução.
+
+### 1. Execução dos notebooks
+- No Databricks, abra e execute o notebook extracao-dados.ipynb.
+- Abra o notebook execucao-projeto-snowflake.ipynb
+
+### 2. Orquestração
+No Databricks vá em **Jobs & Pipelines** e crie um novo job. Esse job deverá ter 2 etapas sendo cada etapa para a execução de um notebook. Preencha as informações da seguinte forma:
+- Task Name: crie um nome para a etapa a ser executada
+- Type: selecione Notebook
+- Source: Workspace
+- Path: qual o caminho onde está o repositório do projeto
+
+## 📊 Modelo Dimensional
+O modelo segue um **Star Schema** com:
+- Dimensões: dim_calendario, dim_hospital, dim_informacoes_hospitalares, dim_paciente
+- Fato: fato_sih
+
+Essas tabelas permitem análises de indicadores de saúde pública, como:
+- Distribuição de doenças por região.
+- Tendências temporais de internações.
+- Procedimentos mais realizados por faixa etária e sexo.
+
+Documentação
+Documentação disponível via dbt docs generate e dbt docs serve.
+
+## Continuidade para o projeto
+- Conectar a pipeline a **uma fonte de dados externa** e armazenar os arquivos brutos em um provedor de nuvem, como **AWS S3**, para garantir escalabilidade e persistência.
+- Implementar **carga incremental** para otimizar o processamento e reduzir custos de execução.
+- **Adicionar novas fontes de dados**, ampliando o escopo de análise e permitindo cruzamentos com diferentes conjuntos do DataSUS ou outras bases públicas.
+
+## 📜 Desenvolvimento
+Projeto desenvolvido para fins educacionais no Desafio Final de Engenharia de Dados da triggo.ai.

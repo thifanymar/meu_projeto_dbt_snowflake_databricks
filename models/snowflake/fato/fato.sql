@@ -1,4 +1,4 @@
-{{ config(materialized='table',alias='fato_vendas',schema='datasus') }}
+{{ config(materialized='table',alias='fato_sih',schema='datasus') }}
 
 with base as (
     select * from {{ source('base_limpa', 'CLEAN_DADOS') }}

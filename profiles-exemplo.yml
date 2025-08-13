@@ -1,0 +1,22 @@
+meu_projeto_dbt_snowflake_databricks:
+  target: databricks
+  outputs:
+    databricks:
+      type: databricks
+      catalog: XXXXX
+      schema: XXXXX
+      host: XXXXX
+      http_path: XXXXX
+      threads: 1
+      token: XXXXX
+    snowflake:
+      account: XXXXX
+      user: XXXXX
+      password: XXXXX
+      role: XXXXX                  
+      database: XXXXX              
+      warehouse: XXXXX            
+      schema: XXXXX                     
+      threads: 
+      role: XXXXX
+      type: snowflake
