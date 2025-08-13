@@ -100,4 +100,4 @@ Documentação disponível via dbt docs generate e dbt docs serve.
 - **Adicionar novas fontes de dados**, ampliando o escopo de análise e permitindo cruzamentos com diferentes conjuntos do DataSUS ou outras bases públicas.
 
 ## 📜 Desenvolvimento
-Projeto desenvolvido para fins educacionais no Desafio Final de Engenharia de Dados da triggo.ai.
+Projeto desenvolvido para fins educacionais no Desafio Final do Bootcamp de Engenharia de Dados da triggo.ai.
