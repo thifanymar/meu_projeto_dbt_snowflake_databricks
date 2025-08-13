@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dados_bronze          # nome lógico para seu banco ou sistema fonte
+    schema: datasus          # schema onde está a tabela saida_1
+    tables:
+      - name: raw_datasus_sih        # nome da tabela que você quer copiar
+        description: "Tabela dados databricks"

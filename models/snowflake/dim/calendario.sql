@@ -1,4 +1,4 @@
-{{ config(materialized='table', alias='dim_calendario', schema='dim11') }}
+{{ config(materialized='table', alias='dim_calendario', schema='datasus') }}
 
 with datas as (
     select

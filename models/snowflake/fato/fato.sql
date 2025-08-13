@@ -1,4 +1,4 @@
-{{ config(materialized='table',alias='fato_vendas',schema='dim11') }}
+{{ config(materialized='table',alias='fato_vendas',schema='datasus') }}
 
 with base as (
     select * from {{ source('base_limpa', 'CLEAN_DADOS') }}
@@ -13,7 +13,7 @@ dim_informacoes as (
         COBRANCA,
         CAR_INT,
         NATUREZA
-    from gold_dim11.dim_informacoes_hospitalares
+    from gold_datasus.dim_informacoes_hospitalares
 ),
 
 dim_paciente as (
@@ -29,7 +29,7 @@ dim_paciente as (
         NUM_FILHOS,
         INSTRU,
         MORTE
-    from gold_dim11.dim_paciente
+    from gold_datasus.dim_paciente
 ),
 
 dim_hospital as (
@@ -39,7 +39,7 @@ dim_hospital as (
         CGC_HOSP,
         GESTAO,
         MUNIC_MOV
-    from gold_dim11.dim_hospital
+    from gold_datasus.dim_hospital
 )
 
 select

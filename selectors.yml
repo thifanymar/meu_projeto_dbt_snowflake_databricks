@@ -1,0 +1,13 @@
+selectors:
+  - name: only_databricks
+    definition:
+      method: path
+      value: models/databricks
+  - name: only_snowflake_dim
+    definition:
+      method: path
+      value: models/snowflake/dim
+  - name: only_snowflake_fato
+    definition:
+      method: path
+      value: models/snowflake/fato

@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    alias='dim_hospital',schema='dim11'
+    alias='dim_hospital',schema='datasus'
 ) }}
 
 with distinct_dim as (

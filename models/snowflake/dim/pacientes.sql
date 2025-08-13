@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    alias='dim_paciente',schema='dim11'
+    alias='dim_paciente',schema='datasus'
 ) }}
 
 with distinct_dim as (
