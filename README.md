@@ -53,6 +53,8 @@ Antes de executar o projeto, você precisa ter:
 
         - gold (para modelo dimensional)
 
+> Atenção: necessário ter um usuário com permissões para ler e gravar dados no Database
+
 **3. dbt-core** e adaptadores instalados:
 ```bash
 python
