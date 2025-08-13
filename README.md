@@ -65,7 +65,9 @@ pip install dbt-core dbt-snowflake dbt-databricks
 
 **6. Simular** dados clean no Snowflake. Fois colocado um arquivo para essa simulação na pasta dados_simulacao nomeado como simulando-dados.txt
 
-OBS: a etapa 6 é necessária pois os dados não são salvos em um provedor de nuvem que permita que o Snowflake tenha acesso a esses dados.
+> Observação:
+> A etapa 6 é necessária porque os dados não estão armazenados em um provedor de nuvem compatível com  acesso direto pelo Snowflake.
+> Na pasta dados_simulacao está disponível o arquivo usado para extrair os dados do DATASUS, gerar o arquivo CSV e realizar o download.
 
 ## 🚀 Como Executar
 Para executar temos duas opções. Executar cada um dos notebooks ou criar um job para orquestrar a execução.
@@ -98,6 +100,10 @@ Documentação disponível via dbt docs generate e dbt docs serve.
 - Conectar a pipeline a **uma fonte de dados externa** e armazenar os arquivos brutos em um provedor de nuvem, como **AWS S3**, para garantir escalabilidade e persistência.
 - Implementar **carga incremental** para otimizar o processamento e reduzir custos de execução.
 - **Adicionar novas fontes de dados**, ampliando o escopo de análise e permitindo cruzamentos com diferentes conjuntos do DataSUS ou outras bases públicas.
+
+## Dashboard desenvolvido
+Link:
+https://app.powerbi.com/view?r=eyJrIjoiYTEyYmRmODAtZmJjNi00MzM1LTlmMWMtNjg5YWVmYzg1Yjk1IiwidCI6IjQ5Njk0NmExLWE2YzktNDQxOS1iZWZlLTk4OTBkMzgwNjdkNCJ9
 
 ## 📜 Desenvolvimento
 Projeto desenvolvido para fins educacionais no Desafio Final do Bootcamp de Engenharia de Dados da triggo.ai.
