@@ -1,4 +1,4 @@
-# Health Insights Brasil - Pipeline de Dados com Databricks, Snowflake e dbt
+# Datasus - Pipeline de Dados com Databricks, Snowflake e dbt
 ## 📌 Contexto
 Este projeto foi desenvolvido como parte do Desafio Final de Engenharia de Dados da triggo.ai, com o objetivo de projetar e implementar uma solução de engenharia de dados para a Health Insights Brasil, uma startup fictícia dedicada a tornar os dados de saúde pública do DataSUS mais acessíveis e prontos para análise.
 
