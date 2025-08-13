@@ -102,7 +102,8 @@ Documentação disponível via dbt docs generate e dbt docs serve.
 - **Adicionar novas fontes de dados**, ampliando o escopo de análise e permitindo cruzamentos com diferentes conjuntos do DataSUS ou outras bases públicas.
 
 ## Dashboard desenvolvido
-Link:
+Após a conclusão e execução do projeto, foi desenvolvido um dashboard no **Power BI** conectado diretamente ao **Snowflake**.
+**Link:**
 https://app.powerbi.com/view?r=eyJrIjoiYTEyYmRmODAtZmJjNi00MzM1LTlmMWMtNjg5YWVmYzg1Yjk1IiwidCI6IjQ5Njk0NmExLWE2YzktNDQxOS1iZWZlLTk4OTBkMzgwNjdkNCJ9
 
 ## 📜 Desenvolvimento
